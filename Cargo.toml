@@ -1,0 +1,134 @@
+[workspace]
+
+resolver = "2"
+
+members = [
+  "signing/interface",
+  "signing/integrations/movement-aptos",
+  "signing/integrations/eth",
+  "signing/providers/aws-kms",
+  "signing/providers/hashicorp-vault",
+  'signing/providers/local',
+  "signing/testing",
+  "demo/hsm",
+]
+
+[workspace.package]
+version = "0.0.2"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+authors = ["Movement Labs"]
+repository = "www.github.com/movementlabs/secure-signing"
+homepage = "www.homepage.com"
+publish = false
+rust-version = "1.75"
+
+[workspace.dependencies]
+# signing
+secure-signer = { path = "signing/interface" }
+secure-signer-aws-kms = { path = "signing/providers/aws-kms" }
+secure-signer-hashicorp-vault = { path = "signing/providers/hashicorp-vault" }
+secure-signer-local = { path = "signing/providers/local" }
+secure-signer-loader = { path = "signing/util/loader" }
+secure-signing-aptos = { path = "signing/integrations/aptos" }
+secure-signing-eth = { path = "signing/integrations/eth" }
+
+## vault
+vaultrs = { version = "0.7.3" }
+aws-sdk-kms = "1.51.0"
+google-cloud-kms = "0.6.0"
+
+# Serialization and Deserialization
+serde = "1.0"
+serde_json = "1.0"
+serde_derive = "1.0"
+serde_yaml = "0.9.34"
+borsh = { version = "0.10" } # todo: internalize jmt and bump
+
+secp256k1 = { version = "0.27", default-features = false, features = [
+  "global-context",
+  "rand-std",
+  "recovery",
+] }
+
+
+anyhow = "1.0"
+async-stream = "0.3.0"
+async-trait = "0.1.71"
+async-recursion = "1.1.1"
+auto_impl = "1.2.0"
+base64 = { version = "0.22.1" }
+blake3 = { version = "1.4.0", features = ["traits-preview"] }
+bytes = { version = "1.2.1", default-features = false }
+chrono = "0.4.37"
+clap = { version = "4.4.10", features = ["derive"] }
+tempfile = "3.5"
+thiserror = "1.0.50"
+tokio = { version = "1.35.1", features = ["full", "tracing"] }
+tokio-console = "0.1.0"
+console-subscriber = "0.3.0"
+tokio-stream = "0.1.15"
+toml = "0.8"
+tonic = "0.12.3"
+tonic-build = { version = "0.12.3", features = ["prost"] }
+tonic-reflection = "0.12.3"
+tonic-web = "0.12.3"
+### To try (experimental) std support, add `features = [ "std" ]` to risc0-zkvm
+tracing = "0.1.40"
+tracing-appender = "0.2"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tracing-test = "0.2.5"
+trie-db = "0.28.0"
+url = "2.2.2"
+ed25519-dalek = "2.1"
+ed25519 = "2.2.3"
+ring-compat = "0.8.0"
+zstd-sys = "2.0.9"
+zstd = "0.13"
+inotify = "0.10.2"
+rustix = "0.38.34"
+paste = "1.0.15"
+uuid = { version = "1.10.0", features = ["v4"] }
+tar = "0.4.41"
+flate2 = "1.0.31"
+blake-3 = "1.4.0"
+ecdsa = "0.16.9"
+regex = "1.10.6"
+globset = "0.4.15"
+glob = "0.3.1"
+hyper = "1.4"
+hyper-util = { version = "0.1.4" }
+tower = { version = "0.5" }
+http-body-util = "0.1"
+tap = "1.0.1"
+
+aws-types = "1.3.3"
+aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
+aws-sdk-s3 = "1.42.0"
+
+
+[workspace.lints.rust]
+dead_code = "deny"        ## Alloy Dependencies
+unused_imports = "deny"
+non_ascii_idents = "deny" # Bad for readability and it can also be a security vulnerability
+
+### In case you need inspiration for new lints to add to the list, this is a good
+### reference: <https://github.com/EmbarkStudios/rust-ecosystem/blob/6783ae1573d62f3f5439b8ff9e04bec191ec2eaf/lints.toml>.
+[workspace.lints.clippy]
+debug_assert_with_mut_call = "deny"
+inefficient_to_string = "deny"
+map_flatten = "deny"
+manual_ok_or = "deny"
+doc_link_with_quotes = "deny"
+match_same_arms = "deny"
+semicolon_if_nothing_returned = "deny"
+
+[profile.dev]
+panic = "unwind"
+
+[profile.release.build-override]
+opt-level = 3
+
+[patch.crates-io]
+merlin = { git = "https://github.com/aptos-labs/merlin" }
+x25519-dalek = { git = "https://github.com/aptos-labs/x25519-dalek", branch = "zeroize_v1" }
