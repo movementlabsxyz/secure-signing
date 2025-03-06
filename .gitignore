@@ -1,0 +1,6 @@
+target
+*.pem
+*.jot*
+*.log
+*.log.*
+.debug
