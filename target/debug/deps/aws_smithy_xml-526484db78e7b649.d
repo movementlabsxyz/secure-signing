@@ -1,0 +1,9 @@
+/Users/l-monninger/dev/secure-signing/target/debug/deps/libaws_smithy_xml-526484db78e7b649.rmeta: /Users/l-monninger/.cargo/registry/src/index.crates.io-6f17d22bba15001f/aws-smithy-xml-0.60.9/src/lib.rs /Users/l-monninger/.cargo/registry/src/index.crates.io-6f17d22bba15001f/aws-smithy-xml-0.60.9/src/decode.rs /Users/l-monninger/.cargo/registry/src/index.crates.io-6f17d22bba15001f/aws-smithy-xml-0.60.9/src/encode.rs /Users/l-monninger/.cargo/registry/src/index.crates.io-6f17d22bba15001f/aws-smithy-xml-0.60.9/src/escape.rs /Users/l-monninger/.cargo/registry/src/index.crates.io-6f17d22bba15001f/aws-smithy-xml-0.60.9/src/unescape.rs
+
+/Users/l-monninger/dev/secure-signing/target/debug/deps/aws_smithy_xml-526484db78e7b649.d: /Users/l-monninger/.cargo/registry/src/index.crates.io-6f17d22bba15001f/aws-smithy-xml-0.60.9/src/lib.rs /Users/l-monninger/.cargo/registry/src/index.crates.io-6f17d22bba15001f/aws-smithy-xml-0.60.9/src/decode.rs /Users/l-monninger/.cargo/registry/src/index.crates.io-6f17d22bba15001f/aws-smithy-xml-0.60.9/src/encode.rs /Users/l-monninger/.cargo/registry/src/index.crates.io-6f17d22bba15001f/aws-smithy-xml-0.60.9/src/escape.rs /Users/l-monninger/.cargo/registry/src/index.crates.io-6f17d22bba15001f/aws-smithy-xml-0.60.9/src/unescape.rs
+
+/Users/l-monninger/.cargo/registry/src/index.crates.io-6f17d22bba15001f/aws-smithy-xml-0.60.9/src/lib.rs:
+/Users/l-monninger/.cargo/registry/src/index.crates.io-6f17d22bba15001f/aws-smithy-xml-0.60.9/src/decode.rs:
+/Users/l-monninger/.cargo/registry/src/index.crates.io-6f17d22bba15001f/aws-smithy-xml-0.60.9/src/encode.rs:
+/Users/l-monninger/.cargo/registry/src/index.crates.io-6f17d22bba15001f/aws-smithy-xml-0.60.9/src/escape.rs:
+/Users/l-monninger/.cargo/registry/src/index.crates.io-6f17d22bba15001f/aws-smithy-xml-0.60.9/src/unescape.rs:
