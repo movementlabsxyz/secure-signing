@@ -82,7 +82,7 @@ impl From<&str> for SignerIdentifier {
 	}
 }
 
-impl FromString for SignerIdentifier {
+impl FromStr for SignerIdentifier {
 	type Err = String;
 
 	fn from_str(s: &str) -> Result<Self, Self::Err> {
