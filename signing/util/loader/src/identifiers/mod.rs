@@ -81,3 +81,12 @@ impl From<&str> for SignerIdentifier {
 		SignerIdentifier::try_from_canonical_string(s).unwrap()
 	}
 }
+
+impl FromString for SignerIdentifier {
+	type Err = String;
+
+	fn from_str(s: &str) -> Result<Self, Self::Err> {
+		// Use the TryFromCanonicalString to parse the string
+		SignerIdentifier::try_from_canonical_string(s)
+	}
+}
