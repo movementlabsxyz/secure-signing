@@ -5,6 +5,7 @@ pub mod local;
 use anyhow::anyhow;
 use secure_signer::{cryptography::Curve, key::TryFromCanonicalString};
 use serde::{Deserialize, Serialize};
+use std::str::FromStr;
 
 #[derive(Debug, Clone, Serialize, Deserialize, Eq, PartialEq)]
 pub enum SignerIdentifier {
