@@ -74,3 +74,10 @@ where
 		Self { signer_identifier, __curve_marker: std::marker::PhantomData }
 	}
 }
+
+impl From<&str> for SignerIdentifier {
+	fn from(s: &str) -> Self {
+		// Use the TryFromCanonicalString to parse the string
+		SignerIdentifier::try_from_canonical_string(s).unwrap()
+	}
+}
